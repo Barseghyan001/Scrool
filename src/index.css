@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin:0 ;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --index:calc(1vw + 1vh);
+  --color-header:#f4efec;
+  --color-text:#cdc6c3;
+  --gallery-gap:calc(var(--index) * 10)
+}
+@font-face {
+  font-family: raleway-c;
+  src: url(../public/fonts/raleway-regular.woff2);
+}
+@font-face {
+  font-family: outefit-c;
+  src: url(../public/fonts/outfit-regular.woff2);
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family:  outefit-c;
+}
+.content,.hero,.main-header,.gallery > * {
+  will-change: transform;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-image: url('../public/imgs/bg.jpg');
+  background-size: 50px;
+  color: #fafafa;
+  font-family:raleway-c;
+  overflow-x: hidden;
+}
+
+.hero {
+  width: calc(var(--index) * 36);
+  position: absolute;
+  left: 37vw;
+  top: 8vh;
+}
+.container {
+  padding: 0 7vw;
+}
+.main-header{
+  height: 100vh;
+}
+.main-title{
+  font-size: calc(var(--index) * 7);
+  position: absolute;
+  width: min-content;
+  bottom: 12vh;
+  line-height: .9;
+}
+.gallery {
+  display: flex;
+  padding: calc(var(--index)*8)  0 ;
+}
+.gallery > * {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.gallery__item {
+  max-width: calc(var(--index) * 22);
+  margin-bottom:var(--gallery-gap) ;
+  max-height: 180vh;
+  border-radius: 7px;
+}
+.gallery__left  {
+
+margin-top: calc(var(--gallery-gap)*1.75);
+}
+.gallery__right .gallery__item {
+  margin-bottom: 0;
+margin-top:var(--gallery-gap);
+
+
+}
+.text-block {
+  color: var(--color-text);
+  position: relative;
+}
+.text-block__h {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--color-header);
+  margin-bottom: 1.5rem;
+}
+.text-block__p {
+  line-height: 1.75rem;
 }
